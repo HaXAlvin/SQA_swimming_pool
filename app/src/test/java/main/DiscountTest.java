@@ -65,4 +65,27 @@ public class DiscountTest {
 
 		}
 	}
+
+	@DisplayName("身份折扣")
+	@Nested
+	class DifferentIdentity {
+		@Test
+		public void testIsMember() throws Throwable{
+			Identity identity = new Identity(25, true, false);
+			Discount discount = new Discount(identity, "2021-05-26 週三 10:30:00");
+			Assertions.assertEquals(0.5, discount.getDiscount());
+		}
+		@Test
+		public void testIsGroup() throws Throwable{
+			Identity identity = new Identity(25, false, true);
+			Discount discount = new Discount(identity, "2021-05-26 週三 10:30:00");
+			Assertions.assertEquals(0.7, discount.getDiscount());
+		}
+		@Test
+		public void testBothMemberAndFroup() throws Throwable{
+			Identity identity = new Identity(25, true, true);
+			Discount discount = new Discount(identity, "2021-05-26 週三 10:30:00");
+			Assertions.assertEquals(0.5, discount.getDiscount());
+		}
+	}
 }
