@@ -25,6 +25,16 @@ public class DiscountTest {
 				Assertions.assertEquals("Your age is too young.", exception.getMessage());
 			}
 		}
+
+		@Test
+		public void testAgeMoreThan() throws Throwable {
+			Identity identity = new Identity(76, false, true);
+			try {
+				new Discount(identity, dateTime);
+			} catch (Throwable exception) {
+				Assertions.assertEquals("Your age doesn't meet the requirements.", exception.getMessage());
+			}
+		}
 	}
 
 	@DisplayName("營業與非營業時間")
@@ -42,6 +52,17 @@ public class DiscountTest {
 			Identity identity = new Identity(25, false, false);
 			Discount discount = new Discount(identity, "2021-05-26 週三 10:30:00");
 			Assertions.assertEquals(1, discount.getDiscount());
+		}
+
+		@Test
+		public void testOutOfBusiness() throws Throwable {
+			Identity identity = new Identity(25, false, false);
+			try {
+				new Discount(identity, "2021-05-26 週三 04:30:00");
+			} catch (Throwable exception) {
+				Assertions.assertEquals("Business hours: 05:00-22:00", exception.getMessage());
+			}
+
 		}
 	}
 }
