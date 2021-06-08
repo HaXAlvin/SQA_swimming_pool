@@ -17,4 +17,14 @@ public class QueryTest {
             });
         }
     }
+    @DisplayName("Check")
+    @Nested
+    class CheckTest{
+        @Test
+        void checkAgeTest() throws InvocationTargetException, NoSuchMethodException, IllegalAccessException {
+
+            Assertions.assertEquals(5,Query.checkAge(5));
+        }
+
+    }
 }

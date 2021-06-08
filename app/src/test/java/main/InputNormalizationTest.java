@@ -39,4 +39,25 @@ public class InputNormalizationTest {
             });
         }
     }
+    @DisplayName("Getter And Setter")
+    @Nested
+    class GetterAndSetter{
+        @Test
+        void boolTrueTest(){
+            InputNormalization.setBool(true);
+            Assertions.assertTrue(InputNormalization.getBool());
+        }
+        @Test
+        void boolFalseTest(){
+            InputNormalization.setBool(false);
+            Assertions.assertFalse(InputNormalization.getBool());
+        }
+        @Test
+        void digitalTest(){
+            InputNormalization.setDigital(10);
+            Assertions.assertEquals(10,InputNormalization.getDigital());
+            InputNormalization.setDigital(1);
+            Assertions.assertEquals(1,InputNormalization.getDigital());
+        }
+    }
 }
