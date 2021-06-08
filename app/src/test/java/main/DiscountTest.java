@@ -17,7 +17,7 @@ public class DiscountTest {
 		}
 
 		@Test
-		 void testAgeLessThan() throws Throwable {
+		 void testAgeLessThan() {
 			Identity identity = new Identity(2, false, true);
 			try {
 				new Discount(identity, dateTime);
@@ -27,7 +27,7 @@ public class DiscountTest {
 		}
 
 		@Test
-		 void testAgeMoreThan() throws Throwable {
+		 void testAgeMoreThan() {
 			Identity identity = new Identity(76, false, true);
 			try {
 				new Discount(identity, dateTime);
@@ -99,7 +99,7 @@ public class DiscountTest {
 			Assertions.assertEquals(0.7, discount.getDiscountRate());
 		}
 		@Test
-		 void testBothMemberAndFroup() throws Throwable{
+		 void testBothMemberAndGroup() throws Throwable{
 			Identity identity = new Identity(25, true, true);
 			Discount discount = new Discount(identity, dateTime);
 			Assertions.assertEquals(0.5, discount.getDiscountRate());

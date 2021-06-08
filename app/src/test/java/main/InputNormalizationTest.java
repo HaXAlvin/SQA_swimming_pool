@@ -30,7 +30,7 @@ public class InputNormalizationTest {
     @Nested
     class PrivateConstructor {
         @Test
-        void testConstructorIsPrivate() throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
+        void testConstructorIsPrivate() throws NoSuchMethodException {
             Constructor<InputNormalization> constructor = InputNormalization.class.getDeclaredConstructor();
             Assertions.assertTrue(Modifier.isPrivate(constructor.getModifiers()));
             constructor.setAccessible(true);
