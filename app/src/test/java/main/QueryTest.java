@@ -8,7 +8,7 @@ public class QueryTest {
     @Nested
     class PrivateConstructor {
         @Test
-        public void testConstructorIsPrivate() throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
+        void testConstructorIsPrivate() throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
             Constructor<Query> constructor = Query.class.getDeclaredConstructor();
             Assertions.assertTrue(Modifier.isPrivate(constructor.getModifiers()));
             constructor.setAccessible(true);
