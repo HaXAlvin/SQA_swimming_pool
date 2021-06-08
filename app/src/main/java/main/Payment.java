@@ -1,8 +1,8 @@
 package main;
 
 public class Payment {
-    final public static int WEEKDAY_CHARGE = 200;
-    final public static int WEEKEND_CHARGE = 250;
+    public static final int WEEKDAY_CHARGE = 200;
+    public static final int WEEKEND_CHARGE = 250;
     private int money;
     private final double totalCharge;
 

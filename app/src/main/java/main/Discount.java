@@ -6,7 +6,7 @@ public class Discount {
 	private final int min;
 	private double discountRate = 0;
 
-	public Discount(Identity identity, String dateTime) throws Exception {
+	public Discount(Identity identity, String dateTime) throws PoolAccessException {
 
 		this.identity = identity;
 		this.hour = InputNormalization.extractHour(dateTime);

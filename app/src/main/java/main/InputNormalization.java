@@ -6,8 +6,6 @@ import java.lang.reflect.Method;
 import java.util.Scanner;
 
 public class InputNormalization {
-
-//    private static String string;
     private static boolean bool;
     private static int digital;
     private InputNormalization() {
@@ -63,9 +61,6 @@ public class InputNormalization {
     public static String extractWeek(String dateTime) {
         return dateTime.split(" ")[1];
     }
-//    public static void setString(String string){
-//        InputNormalization.string = string;
-//    }
     public static void setBool(Boolean bool){
         InputNormalization.bool = bool;
     }
