@@ -1,8 +1,8 @@
 package main;
 
 public class Payment {
-    final public static int weekdayCharge = 200;
-    final public static int weekendCharge = 250;
+    final public static int WEEKDAY_CHARGE = 200;
+    final public static int WEEKEND_CHARGE = 250;
     private int money;
     private final double totalCharge;
 
@@ -17,11 +17,11 @@ public class Payment {
             case "週三":
             case "週四":
             case "週五":
-                money = weekdayCharge;
+                money = WEEKDAY_CHARGE;
                 break;
             case "週六":
             case "週日":
-                money = weekendCharge;
+                money = WEEKEND_CHARGE;
                 break;
             default:
                 break;

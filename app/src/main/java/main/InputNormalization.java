@@ -30,9 +30,6 @@ public class InputNormalization {
                 }
                 setDigital(number);
                 break;
-            case "String":
-//                setString(inputWord);
-                break;
             case "boolean":
                 try {
                     if (inputWord.equalsIgnoreCase("Y")) {
@@ -47,6 +44,8 @@ public class InputNormalization {
                     System.out.println(error);
                     method.invoke(null);
                 }
+                break;
+            default:
                 break;
         }
     }
