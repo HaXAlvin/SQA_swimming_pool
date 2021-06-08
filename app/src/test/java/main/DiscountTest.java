@@ -13,7 +13,7 @@ public class DiscountTest {
 		public void testAgeHasDiscount() throws Throwable {
 			Identity identity = new Identity(10, false, false);
 			Discount discount = new Discount(identity, dateTime);
-			Assertions.assertEquals(0.8, discount.getDiscount());
+			Assertions.assertEquals(0.8, discount.getDiscountRate());
 		}
 
 		@Test
@@ -44,13 +44,13 @@ public class DiscountTest {
 		@Test
 		public void testEarlyBirdBusiness() throws Throwable {
 			Discount discount = new Discount(identity, "2021-05-26 週三 06:30:00");
-			Assertions.assertEquals(0.8, discount.getDiscount());
+			Assertions.assertEquals(0.8, discount.getDiscountRate());
 		}
 
 		@Test
 		public void testHaveBusiness() throws Throwable {
 			Discount discount = new Discount(identity, "2021-05-26 週三 10:30:00");
-			Assertions.assertEquals(1, discount.getDiscount());
+			Assertions.assertEquals(1, discount.getDiscountRate());
 		}
 
 		@Test
@@ -72,19 +72,19 @@ public class DiscountTest {
 		public void testIsMember() throws Throwable{
 			Identity identity = new Identity(25, true, false);
 			Discount discount = new Discount(identity, dateTime);
-			Assertions.assertEquals(0.5, discount.getDiscount());
+			Assertions.assertEquals(0.5, discount.getDiscountRate());
 		}
 		@Test
 		public void testIsGroup() throws Throwable{
 			Identity identity = new Identity(25, false, true);
 			Discount discount = new Discount(identity, dateTime);
-			Assertions.assertEquals(0.7, discount.getDiscount());
+			Assertions.assertEquals(0.7, discount.getDiscountRate());
 		}
 		@Test
 		public void testBothMemberAndFroup() throws Throwable{
 			Identity identity = new Identity(25, true, true);
 			Discount discount = new Discount(identity, dateTime);
-			Assertions.assertEquals(0.5, discount.getDiscount());
+			Assertions.assertEquals(0.5, discount.getDiscountRate());
 		}
 	}
 }

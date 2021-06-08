@@ -25,7 +25,7 @@ public class Payment {
                 break;
         }
 
-        totalCharge = money * discount.getDiscount();
+        totalCharge = money * discount.getDiscountRate();
     }
 
     public void print() {
