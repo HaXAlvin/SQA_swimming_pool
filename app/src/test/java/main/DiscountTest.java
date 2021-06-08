@@ -54,9 +54,27 @@ public class DiscountTest {
 		}
 
 		@Test
-		 void testOutOfBusiness() throws Throwable {
+		 void testEarlyBusiness() throws Throwable {
 			try {
 				new Discount(identity, "2021-05-26 週三 04:30:00");
+			} catch (Throwable exception) {
+				Assertions.assertEquals("Business hours: 05:00-22:00", exception.getMessage());
+			}
+
+		}
+		@Test
+		void testLateBusiness() throws Throwable {
+			try {
+				new Discount(identity, "2021-05-26 週三 22:30:00");
+			} catch (Throwable exception) {
+				Assertions.assertEquals("Business hours: 05:00-22:00", exception.getMessage());
+			}
+
+		}
+		@Test
+		void testJustOutBusiness() throws Throwable {
+			try {
+				new Discount(identity, "2021-05-26 週三 22:00:00");
 			} catch (Throwable exception) {
 				Assertions.assertEquals("Business hours: 05:00-22:00", exception.getMessage());
 			}
