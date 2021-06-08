@@ -5,17 +5,17 @@ public class InputNormalizationTest {
     @Nested
     class TimeExtractTest{
         @Test
-        public void extractHourTest(){
+         void extractHourTest(){
             String dateTime = "2021-05-26 週三 14:30:00";
             Assertions.assertEquals(14,InputNormalization.extractHour(dateTime));
         }
         @Test
-        public void extractMinTest(){
+         void extractMinTest(){
             String dateTime = "2021-05-26 週三 14:30:00";
             Assertions.assertEquals(30,InputNormalization.extractMin(dateTime));
         }
         @Test
-        public void extractWeekTest(){
+         void extractWeekTest(){
             String dateTime = "2021-05-26 週三 14:30:00";
             Assertions.assertEquals("週三",InputNormalization.extractWeek(dateTime));
         }

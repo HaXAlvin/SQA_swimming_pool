@@ -6,12 +6,12 @@ public class IdentityTest {
     @Nested
     class AgeTest {
         @Test
-        public void ageGetterTest() {
+         void ageGetterTest() {
             Identity identity = new Identity(25, false, false);
             Assertions.assertEquals(25, identity.getAge());
         }
         @Test
-        public void ageSetterTest() {
+         void ageSetterTest() {
             Identity identity = new Identity(25, false, false);
             identity.setAge(10);
             Assertions.assertEquals(10, identity.getAge());
@@ -21,12 +21,12 @@ public class IdentityTest {
     @Nested
     class MemberTest {
         @Test
-        public void memberGetterTest() {
+         void memberGetterTest() {
             Identity identity = new Identity(25, true, false);
             Assertions.assertTrue(identity.isMember());
         }
         @Test
-        public void memberSetterTest() {
+         void memberSetterTest() {
             Identity identity = new Identity(25, true, false);
             identity.setMember(false);
             Assertions.assertFalse(identity.isMember());
@@ -36,12 +36,12 @@ public class IdentityTest {
     @Nested
     class GroupTest {
         @Test
-        public void groupGetterTest() {
+         void groupGetterTest() {
             Identity identity = new Identity(25, false, true);
             Assertions.assertTrue(identity.isGroup());
         }
         @Test
-        public void groupSetterTest() {
+         void groupSetterTest() {
             Identity identity = new Identity(25, false, true);
             identity.setGroup(false);
             Assertions.assertFalse(identity.isGroup());
