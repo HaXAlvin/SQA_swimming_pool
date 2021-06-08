@@ -10,7 +10,9 @@ public class InputNormalization {
     public static String string;
     public static boolean bool;
     public static int digital;
-
+    private InputNormalization() {
+        throw new IllegalStateException("Utility class");
+    }
     public static void regularize(Method method, String type, String tip, String error)
            throws InvocationTargetException, IllegalAccessException {
         System.out.println(tip);
