@@ -30,8 +30,10 @@ public class Payment {
         totalCharge = money * discount.getDiscountRate();
     }
     public int getMoney() { return money; }
-    public void print() {
-        System.out.println("Please pay $" + (int) totalCharge + ".");
+    public String print() {
+        String display = "Please pay $" + (int) totalCharge + ".";
+        System.out.println(display);
+        return display;
     }
 
     public double getTotalCharge(){

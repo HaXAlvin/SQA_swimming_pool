@@ -82,7 +82,7 @@ public class PaymentTest {
             String dateTime = "2021-05-26 週三 06:30:00";
             Discount discount = new Discount(identity,dateTime);
             Payment payment = new Payment(discount,dateTime);
-            payment.print();
+            Assertions.assertEquals("Please pay $160.",payment.print());
         }
     }
 
