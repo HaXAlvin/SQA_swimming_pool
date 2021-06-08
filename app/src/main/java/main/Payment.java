@@ -1,10 +1,10 @@
 package main;
 
 public class Payment {
-    public static int weekdayCharge = 200;
-    public static int weekendCharge = 250;
-    public int money;
-    public double totalCharge;
+    final public static int weekdayCharge = 200;
+    final public static int weekendCharge = 250;
+    private int money;
+    private final double totalCharge;
 
     public Payment(Discount discount, String dateTime) {
 
@@ -23,11 +23,13 @@ public class Payment {
             case "週日":
                 money = weekendCharge;
                 break;
+            default:
+                break;
         }
 
         totalCharge = money * discount.getDiscountRate();
     }
-
+    public int getMoney() { return money; }
     public void print() {
         System.out.println("Please pay $" + (int) totalCharge + ".");
     }

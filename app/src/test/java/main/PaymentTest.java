@@ -11,14 +11,14 @@ public class PaymentTest {
             String dateTime = "2021-05-26 週三 14:30:00";
             Discount discount = new Discount(identity,dateTime);
             Payment payment = new Payment(discount,dateTime);
-            Assertions.assertEquals(Payment.weekdayCharge,payment.money);
+            Assertions.assertEquals(Payment.weekdayCharge,payment.getMoney());
         }
         @Test
         public void weekendTest() throws Throwable {
             String dateTime = "2021-05-29 週六 14:30:00";
             Discount discount = new Discount(identity,dateTime);
             Payment payment = new Payment(discount,dateTime);
-            Assertions.assertEquals(Payment.weekendCharge,payment.money);
+            Assertions.assertEquals(Payment.weekendCharge,payment.getMoney());
         }
     }
     @DisplayName("折後價格測試")
