@@ -10,7 +10,7 @@ public class Query {
         String errorMessage = "Please key in digital.";
         Method method = Query.class.getMethod("queryAge");
         InputNormalization.regularize(method, "int", tipMessage, errorMessage);
-        return checkAge(InputNormalization.digital);
+        return checkAge(InputNormalization.getDigital());
     }
 
     public static int checkAge(int age) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
@@ -29,7 +29,7 @@ public class Query {
         String errorMessage = "Please enter Y or N.";
         Method method = Query.class.getMethod("queryGroup");
         InputNormalization.regularize(method, "boolean", tipMessage, errorMessage);
-        return InputNormalization.bool;
+        return InputNormalization.getBool();
     }
 
     public static boolean queryMember() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
@@ -37,6 +37,6 @@ public class Query {
         String errorMessage = "Please enter Y or N.";
         Method method = Query.class.getMethod("queryMember");
         InputNormalization.regularize(method, "boolean", tipMessage, errorMessage);
-        return InputNormalization.bool;
+        return InputNormalization.getBool();
     }
 }

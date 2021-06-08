@@ -7,9 +7,9 @@ import java.util.Scanner;
 
 public class InputNormalization {
 
-    public static String string;
-    public static boolean bool;
-    public static int digital;
+    private static String string;
+    private static boolean bool;
+    private static int digital;
     private InputNormalization() {
         throw new IllegalStateException("Utility class");
     }
@@ -28,17 +28,17 @@ public class InputNormalization {
                     System.out.println(error);
                     method.invoke(null);
                 }
-                digital = number;
+                setDigital(number);
                 break;
             case "String":
-                string = inputWord;
+                setString(inputWord);
                 break;
             case "boolean":
                 try {
                     if (inputWord.equalsIgnoreCase("Y")) {
-                        bool = true;
+                        setBool(true);
                     } else if (inputWord.equalsIgnoreCase("N")) {
-                        bool = false;
+                        setBool(false);
                     } else {
                         throw new IOException();
                     }
@@ -63,5 +63,20 @@ public class InputNormalization {
 
     public static String extractWeek(String dateTime) {
         return dateTime.split(" ")[1];
+    }
+    public static void setString(String string){
+        InputNormalization.string = string;
+    }
+    public static void setBool(Boolean bool){
+        InputNormalization.bool = bool;
+    }
+    public static void setDigital(int digital){
+        InputNormalization.digital = digital;
+    }
+    public static boolean getBool(){
+        return bool;
+    }
+    public static int getDigital(){
+        return digital;
     }
 }
